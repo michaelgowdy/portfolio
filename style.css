@@ -9,15 +9,16 @@
 :root {
 	--black: #2d2924;
 	--parchment: #F1E9D2;
-  --color10: hsl(31, 80%, 10%);
-  --color30: hsl(31, 80%, 30%);
-  --color90: hsl(31, 80%, 90%);
-  --color100: hsl(31, 80%, 100%);
-  --accent: hsl(31, 80%, 70%);
+
+	--primary: var(--parchment);
+	--accent: var(--black);
+
   --ff: "Roboto Mono", monospace;
+
   --p: 1rem/1.5em var(--ff);
   --h1: 600 3rem/1.2em var(--ff);
   --h2: 600 2rem/1.2em var(--ff);
+	
   --spacing4: 4px;
   --spacing8: 8px;
   --spacing16: 16px;
@@ -34,37 +35,61 @@ html {
 body {
   text-wrap: balance;
   font: var(--p);
-  background: var(--parchment);
-  color: var(--black);
+  background: var(--primary);
+  color: var(--accent);
 }
 a {
-  color: var(--black);
+  color: var(--accent);
   text-decoration: none;
-	border: 1px solid var(--parchment);
-	padding: var(--spacing4);
+	border: 1px solid var(--primary);
 }
 a:hover {
-  border: 1px solid var(--black);
-	padding: var(--spacing4);
+  border: 1px solid var(--accent);
 }
 a:active {
-	background-color: var(--black);
+	background-color: var(--accent);
 }
 button {
-	border: none;
 	background-color: transparent;
-	border: 1px solid var(--parchment);
-	padding: var(--spacing4);
+	color: var(--accent);
+	border: 2px solid var(--primary);
+	margin: var(--spacing8) 0 0 0;
 }
 button:hover {
-	border: 1px solid var(--black);
-	padding: var(--spacing4);
+	border: 2px solid var(--accent);
 }
-button:active {
-	background-color: var(--black);
+.title::after {
+	content: 'michael_gowdy';
 }
-img {
-  width: 100%;
+.title:hover::after {
+	content: 'ydwog_leahcim'
+}
+.work::after {
+	content: 'work';
+}
+.work:hover::after {
+	content: 'krow';
+}
+.contact::after {
+	content: 'contact';
+}
+.contact:hover::after {
+	content: 'tcatnoc';
+}
+t-main-section {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	margin: calc(100dvh / 4) 0 var(--spacing40) 0;
+	
+	img {
+		width: 128px;
+		height: 128px;
+		image-rendering: pixelated;
+		margin: 0 0 var(--spacing20) 0;
+	}
 }
 
 /* header */
@@ -89,28 +114,19 @@ nav {
 		padding: 6px 4px 0 4px;
 	}
 }
-/* .ham {
-  display: none;
-  width: 20px;
-} */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24
+}
+.material-symbols-outlined.custom { color: var(--accent); }
+
 @media (max-width: 750px) {
-  /* .ham {
-    display: block;
-  } */
   nav {
     gap: var(--spacing20)
   }
-  /* nav.show { */
-    /* display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: var(--spacing80);
-    right: 0px;
-    background: var(--accent);
-    padding: var(--spacing20);
-    gap: var(--spacing20);
-    border-radius: var(--spacing8); */
-  /* } */
 }
 
 /* utility */
@@ -121,43 +137,32 @@ nav {
 
 /* .dark-mode */
 
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--primary: var(--black);
+		--accent: var(--parchment);
+	}
+} */
+
 .dark-mode {
-	background: var(--black);
-	color: var(--parchment);
+	background: var(--accent);
+	color: var(--primary);
 
 	a {
-		color: var(--parchment);
-		border: 1px solid var(--black);
+		color: var(--primary);
+		border: 1px solid var(--accent);
 	}
 	a:hover {
-		border: 1px solid var(--parchment);
-		padding: 4px;
+		border: 1px solid var(--primary);
 	}
 	a:active {
-		background-color: var(--parchment);
+		background-color: var(--primary);
 	}
-
-	button {
-		border: none;
-		background-color: transparent;
-		border: 1px solid var(--black);
-		padding: 6px 4px 4px;
+	nav {
+		.theme-toggle {
+			margin: 6px var(--spacing4) var(--spacing4) var(--spacing4);
+			padding: 6px 4px 0 4px;
+		}
 	}
-	button:hover {
-		border: 1px solid var(--parchment);
-		padding: 6px 4px 4px;
-	}
-	button:active {
-		background-color: var(--parchment);
-	}
-	.material-symbols-outlined.custom { color: var(--parchment); }
+	.material-symbols-outlined.custom { color: var(--primary); }
 }
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 200,
-  'GRAD' 0,
-  'opsz' 24
-}
-.material-symbols-outlined.custom { color: var(--black); }

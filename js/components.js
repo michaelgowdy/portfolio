@@ -6,39 +6,29 @@ class THeader extends HTMLElement {
 			<header>
 				<a
 					id="title"
+					class="title"
 					href="#"
-					onmouseover="swapText('title', 'ydwog_leahcim')"
-					onmouseout="swapText('title', 'michael_gowdy')"
 					onclick="toggleContactToWork()"
-				>
-					michael_gowdy
-				</a>
+				></a>
 
 				<nav id="navbar">
 					<a
 						id="work"
+						class="work"
 						href="#work"
-						onmouseover="swapText('title', 'krow')"
-						onmouseout="swapText('title', 'michael_gowdy')"
 						onclick="toggleWorkToContact()"
-					>
-						work
-					</a>
+					></a>
 
 					<a
 						id="contact"
-						class="hidden"
+						class="contact hidden"
 						href="#contact"
-						onmouseover="swapText('title', 'tcatnoc')"
-						onmouseout="swapText('title', 'michael_gowdy')"
 						onclick="toggleContactToWork()"
-					>
-						contact
-					</a>
+					></a>
 
 					<a href="#" class="theme-toggle" onclick="toggleTheme()">
-						<span class="material-symbols-outlined">
-								contrast
+						<span id="theme-icon" class="material-symbols-outlined">
+								power
 						</span>
 					</a>
 				</nav>
@@ -49,30 +39,17 @@ class THeader extends HTMLElement {
 customElements.define("t-header", THeader);
 
 // main section
-// class TMainSection extends HTMLElement {
-//   connectedCallback() {
-//     const heading = this.getAttribute("heading");
-//     const details = this.getAttribute("details");
+class TMainSection extends HTMLElement {
+  connectedCallback() {
+    // const heading = this.getAttribute("heading");
+    // const details = this.getAttribute("details");
 
-//     this.innerHTML = `
-//       <div class="main-section">
-//         <h2>${heading}</h2>
-//         <p>${details}</p>
-//       </div>
-//     `;
-//   }
-// }
-// customElements.define("t-main-section", TMainSection);
-
-// hamburger
-// <img src="img/ham-open.svg" class="ham" />
-// const ham = document.querySelector(".ham");
-// const nav = document.querySelector("nav");
-// ham.addEventListener("click", toggle);
-// nav.addEventListener("click", toggle);
-// function toggle() {
-//   ham.src = ham.src.includes("img/ham-close.svg")
-//     ? "img/ham-open.svg"
-//     : "img/ham-close.svg";
-//   nav.classList.toggle("show");
-// }
+    this.innerHTML = `
+			<img id="computer_gif" src="assets/computer_black.gif">
+			<a href="mailto:michaelmichaelgowdy@gmail.com">
+				<u>michaelmichaelgowdy@gmail.com</u>
+			</a>
+    `;
+  }
+}
+customElements.define("t-main-section", TMainSection);
