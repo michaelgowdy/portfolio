@@ -18,7 +18,7 @@
   --p: 1rem/1.5em var(--ff);
   --h1: 600 3rem/1.2em var(--ff);
   --h2: 600 2rem/1.2em var(--ff);
-	
+
   --spacing4: 4px;
   --spacing8: 8px;
   --spacing16: 16px;
@@ -76,7 +76,7 @@ button:hover {
 .contact:hover::after {
 	content: 'tcatnoc';
 }
-t-main-section {
+t-contact-main-section {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -90,6 +90,14 @@ t-main-section {
 		image-rendering: pixelated;
 		margin: 0 0 var(--spacing20) 0;
 	}
+}
+t-work-main-section {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	margin: calc(100dvh / 4) 0 var(--spacing40) 0;
 }
 
 /* header */

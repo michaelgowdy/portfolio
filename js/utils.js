@@ -1,25 +1,22 @@
 var theme = 'light';
-var computerBlack;
-var computerParchment;
-
-window.onload = function () {
-	computerBlack = 'assets/computer_black.gif';
-	computerParchment = 'assets/computer_parchment.gif';
-}
 
 function toggleTheme() {
+	theme = theme == 'light' ? 'dark' : 'light';
+
   var element = document.body;
+	var icon = document.getElementById('theme-icon');
+	
   element.classList.toggle('dark-mode');
 
-	var icon = document.getElementById('theme-icon');
-	icon.innerText = icon.innerText == 'power' ? 'power_off' : 'power';
-
-	var computer = document.getElementById('computer_gif');
-	if(computer.src.includes(computerBlack)) {
-		computer.src = computerParchment;
+	if(theme == 'light') {
+		icon.innerText = 'power';
+		showElement('computer_black');
+		hideElement('computer_parchment');
 	}
-	else {
-		computer.src = computerBlack;
+	if(theme == 'dark') {
+		icon.innerText = 'power_off';
+		showElement('computer_parchment');
+		hideElement('computer_black');
 	}
 }
 
