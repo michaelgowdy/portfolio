@@ -28,7 +28,7 @@ class THeader extends HTMLElement {
 				<a
 					id="title"
 					class="title"
-					href="/"
+					href="index.html"
 					onclick="toggleContactToWork()"
 				></a>
 
